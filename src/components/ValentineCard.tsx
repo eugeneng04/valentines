@@ -62,9 +62,10 @@ const ValentineCard = () => {
           size="lg"
           onMouseEnter={handleNoHover}
           onTouchStart={handleNoHover}
-          className="text-lg px-8 transition-all duration-200 absolute"
+          className="text-lg px-8 transition-all duration-200"
           style={{
-            transform: `translate(${noPosition.x}px, ${noPosition.y}px)`,
+            position: noPosition.x === 0 && noPosition.y === 0 ? 'relative' : 'absolute',
+            transform: noPosition.x === 0 && noPosition.y === 0 ? 'none' : `translate(${noPosition.x}px, ${noPosition.y}px)`,
           }}
         >
           No 💔
