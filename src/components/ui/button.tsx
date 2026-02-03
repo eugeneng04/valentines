@@ -15,6 +15,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        valentine: "bg-valentine-rose text-primary-foreground hover:bg-valentine-deep shadow-valentine rounded-full font-semibold",
+        valentineOutline: "border-2 border-valentine-rose text-valentine-rose hover:bg-valentine-pink rounded-full font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
