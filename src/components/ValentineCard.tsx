@@ -1,5 +1,9 @@
 import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import heartGift from "@/assets/heart-gift.svg";
+import heartSparkle from "@/assets/heart-sparkle.svg";
+import heartSimple from "@/assets/heart-simple.svg";
+import heartBroken from "@/assets/heart-broken.svg";
 
 const ValentineCard = () => {
   const [accepted, setAccepted] = useState(false);
@@ -26,12 +30,12 @@ const ValentineCard = () => {
   if (accepted) {
     return (
       <div className="relative z-10 text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4 animate-pulse-love">
-        <div className="text-6xl mb-6">💕</div>
+      <img src={heartSparkle} alt="Heart" className="w-16 h-16 mx-auto mb-6 text-valentine-heart" />
         <h1 className="font-script text-4xl md:text-5xl text-valentine-text mb-4">
           Yay!
         </h1>
-        <p className="text-valentine-text/80 text-lg">
-          I knew you'd say yes! 💖
+        <p className="text-valentine-text/80 text-lg flex items-center justify-center gap-2">
+          I knew you'd say yes! <img src={heartSimple} alt="Heart" className="w-6 h-6 inline text-valentine-heart" />
         </p>
       </div>
     );
@@ -42,7 +46,7 @@ const ValentineCard = () => {
       ref={containerRef}
       className="relative z-10 text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4 min-h-[350px]"
     >
-      <div className="text-5xl mb-6">💝</div>
+      <img src={heartGift} alt="Heart with gift" className="w-14 h-14 mx-auto mb-6 text-valentine-heart" />
       <h1 className="font-script text-3xl md:text-4xl text-valentine-text mb-8">
         Will you be my Valentine?
       </h1>
@@ -52,9 +56,9 @@ const ValentineCard = () => {
           variant="valentine"
           size="lg"
           onClick={() => setAccepted(true)}
-          className="text-lg px-8"
+          className="text-lg px-8 flex items-center gap-2"
         >
-          Yes 💖
+          Yes <img src={heartSimple} alt="" className="w-5 h-5" />
         </Button>
         
         <Button
@@ -62,13 +66,13 @@ const ValentineCard = () => {
           size="lg"
           onMouseEnter={handleNoHover}
           onTouchStart={handleNoHover}
-          className="text-lg px-8 transition-all duration-200"
+          className="text-lg px-8 transition-all duration-200 flex items-center gap-2"
           style={{
             position: noPosition.x === 0 && noPosition.y === 0 ? 'relative' : 'absolute',
             transform: noPosition.x === 0 && noPosition.y === 0 ? 'none' : `translate(${noPosition.x}px, ${noPosition.y}px)`,
           }}
         >
-          No 💔
+          No <img src={heartBroken} alt="" className="w-5 h-5" />
         </Button>
       </div>
     </div>
