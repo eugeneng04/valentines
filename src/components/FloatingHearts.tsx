@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import heartSimple from "@/assets/heart-simple.svg";
+import ollie1 from "@/assets/ollie1.png";
 
 interface Heart {
   id: number;
@@ -28,7 +29,7 @@ const FloatingHearts = () => {
       {hearts.map((heart) => (
         <img
           key={heart.id}
-          src={heartSimple}
+          src={ollie1}
           alt=""
           className="absolute animate-float text-valentine-heart opacity-60"
           style={{

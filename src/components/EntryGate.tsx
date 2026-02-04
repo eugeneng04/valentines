@@ -45,7 +45,7 @@ const EntryGate = ({ onSuccess }: EntryGateProps) => {
           
           {error && (
             <p className="text-valentine-primary text-sm animate-pulse">
-              Hmm, I don't think that's right...
+              This isn't for you!
             </p>
           )}
           
