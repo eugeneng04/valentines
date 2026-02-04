@@ -4,6 +4,9 @@ import heartGift from "@/assets/heart-gift.svg";
 import heartSparkle from "@/assets/heart-sparkle.svg";
 import heartSimple from "@/assets/heart-simple.svg";
 import heartBroken from "@/assets/heart-broken.svg";
+import ollie1 from "@/assets/ollie1.png";
+import ollie_flowers from "@/assets/ollie_flowers.png";
+import ollie2 from "@/assets/ollie2.png";
 
 const ValentineCard = () => {
   const [accepted, setAccepted] = useState(false);
@@ -30,12 +33,12 @@ const ValentineCard = () => {
   if (accepted) {
     return (
       <div className="relative z-10 text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4 animate-pulse-love">
-      <img src={heartSparkle} alt="Heart" className="w-16 h-16 mx-auto mb-6 text-valentine-heart" />
+      <img src={ollie_flowers} alt="Heart" className="w-16 h-16 mx-auto mb-6 text-valentine-heart" />
         <h1 className="font-script text-4xl md:text-5xl text-valentine-text mb-4">
           Yay!
         </h1>
         <p className="text-valentine-text/80 text-lg flex items-center justify-center gap-2">
-          I knew you'd say yes! <img src={heartSimple} alt="Heart" className="w-6 h-6 inline text-valentine-heart" />
+          I knew you'd say yes! <img src={ollie2} alt="Heart" className="w-6 h-6 inline text-valentine-heart" />
         </p>
       </div>
     );
@@ -46,7 +49,7 @@ const ValentineCard = () => {
       ref={containerRef}
       className="relative z-10 text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4 min-h-[350px]"
     >
-      <img src={heartGift} alt="Heart with gift" className="w-14 h-14 mx-auto mb-6 text-valentine-heart" />
+      <img src={ollie_flowers} alt="Heart with gift" className="w-14 h-14 mx-auto mb-6 text-valentine-heart" />
       <h1 className="font-script text-3xl md:text-4xl text-valentine-text mb-8">
         Will you be my Valentine?
       </h1>
@@ -58,7 +61,7 @@ const ValentineCard = () => {
           onClick={() => setAccepted(true)}
           className="text-lg px-8 flex items-center gap-2"
         >
-          Yes <img src={heartSimple} alt="" className="w-5 h-5" />
+          Yes <img src={ollie2} alt="" className="w-5 h-5" />
         </Button>
         
         <Button
@@ -72,7 +75,7 @@ const ValentineCard = () => {
             transform: noPosition.x === 0 && noPosition.y === 0 ? 'none' : `translate(${noPosition.x}px, ${noPosition.y}px)`,
           }}
         >
-          No <img src={heartBroken} alt="" className="w-5 h-5" />
+          No 💔
         </Button>
       </div>
     </div>
