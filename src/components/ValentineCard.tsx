@@ -75,6 +75,9 @@ const ValentineCard = () => {
             </Button>
           </div>
         )}
+      </div>
+    );
+  }
 
   return (
     <div
