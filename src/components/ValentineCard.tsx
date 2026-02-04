@@ -10,6 +10,7 @@ import ollie2 from "@/assets/ollie2.png";
 
 const ValentineCard = () => {
   const [accepted, setAccepted] = useState(false);
+  const [showItinerary, setShowItinerary] = useState(false);
   const [noPosition, setNoPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -33,16 +34,47 @@ const ValentineCard = () => {
   if (accepted) {
     return (
       <div className="relative z-10 text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4 animate-pulse-love">
-      <img src={ollie_flowers} alt="Heart" className="w-16 h-16 mx-auto mb-6 text-valentine-heart" />
+        <img src={ollie_flowers} alt="Heart" className="w-16 h-16 mx-auto mb-6 text-valentine-heart" />
         <h1 className="font-script text-4xl md:text-5xl text-valentine-text mb-4">
-          Yay!
+          Yayyyy!!!
         </h1>
         <p className="text-valentine-text/80 text-lg flex items-center justify-center gap-2">
           I knew you'd say yes! <img src={ollie2} alt="Heart" className="w-6 h-6 inline text-valentine-heart" />
         </p>
-      </div>
-    );
-  }
+        
+        {!showItinerary ? (
+          <Button
+            variant="valentine"
+            size="lg"
+            onClick={() => setShowItinerary(true)}
+            className="mt-6"
+          >
+            View Itinerary
+          </Button>
+        ) : (
+          <div className="mt-6 text-left bg-valentine-text/10 p-4 rounded-lg">
+            <h2 className="font-script text-2xl text-valentine-text mb-4">Our Plans</h2>
+            <div className="space-y-4 text-valentine-text/80">
+              <div>
+                <p className="font-bold text-valentine-text">Friday</p>
+                <p>I'll pick you up 5-6pm</p>
+                <p>Dinner at 7pm</p>
+              </div>
+              <div>
+                <p className="font-bold text-valentine-text">Saturday</p>
+                <p>Small hike</p>
+              </div>
+            </div>
+            <Button
+              variant="valentineOutline"
+              size="sm"
+              onClick={() => setShowItinerary(false)}
+              className="mt-4"
+            >
+              Back
+            </Button>
+          </div>
+        )}
 
   return (
     <div
