@@ -27,12 +27,14 @@ const FloatingHearts = () => {
       {hearts.map((heart) => (
         <div
           key={heart.id}
-          className="absolute animate-float opacity-60"
+          className="absolute animate-float opacity-60 flex items-center justify-center"
           style={{
             left: `${heart.left}%`,
+            top: "-50px",
             animationDelay: `${heart.delay}s`,
             animationDuration: `${heart.duration}s`,
-            fontSize: `${heart.size}px`,
+            fontSize: `${heart.size * 2}px`,
+            lineHeight: "1",
           }}
         >
           ❤️

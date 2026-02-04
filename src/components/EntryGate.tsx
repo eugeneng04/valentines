@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import heartSimple from "@/assets/heart-simple.svg";
 import ollie1 from "@/assets/ollie1.png";
 
 
