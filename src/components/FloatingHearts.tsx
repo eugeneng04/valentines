@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import heartSimple from "@/assets/heart-simple.svg";
 import ollie1 from "@/assets/ollie1.png";
 
 interface Heart {
@@ -27,19 +26,18 @@ const FloatingHearts = () => {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {hearts.map((heart) => (
-        <img
+        <div
           key={heart.id}
-          src={ollie1}
-          alt=""
-          className="absolute animate-float text-valentine-heart opacity-60"
+          className="absolute animate-float opacity-60"
           style={{
             left: `${heart.left}%`,
             animationDelay: `${heart.delay}s`,
             animationDuration: `${heart.duration}s`,
-            width: `${heart.size}px`,
-            height: `${heart.size}px`,
+            fontSize: `${heart.size}px`,
           }}
-        />
+        >
+          ❤️
+        </div>
       ))}
     </div>
   );
