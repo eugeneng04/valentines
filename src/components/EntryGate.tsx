@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import heartSimple from "@/assets/heart-simple.svg";
-import ollie1 from "@/assets/ollie1.png";
-
 
 interface EntryGateProps {
   onSuccess: () => void;
@@ -27,7 +25,7 @@ const EntryGate = ({ onSuccess }: EntryGateProps) => {
   return (
     <div className="min-h-screen bg-valentine-bg flex items-center justify-center p-4">
       <div className="text-center p-8 md:p-12 bg-valentine-card/90 backdrop-blur-sm rounded-3xl shadow-valentine max-w-md mx-4">
-        <img src={ollie1} alt="Ollie1" className="w-14 h-14 mx-auto mb-6 text-valentine-heart" />
+        <img src={heartSimple} alt="Heart" className="w-14 h-14 mx-auto mb-6 text-valentine-heart" />
         <h1 className="font-script text-3xl md:text-4xl text-valentine-text mb-6">
           Who are you?
         </h1>
@@ -47,7 +45,7 @@ const EntryGate = ({ onSuccess }: EntryGateProps) => {
           
           {error && (
             <p className="text-valentine-primary text-sm animate-pulse">
-              Hmm, I don't think that's right...
+              This isn't for you!
             </p>
           )}
           

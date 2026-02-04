@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-<<<<<<< HEAD
-import ollie1 from "@/assets/ollie1.png";
-=======
 import heartSimple from "@/assets/heart-simple.svg";
->>>>>>> parent of 8f9d673 (try use png)
+import ollie1 from "@/assets/ollie1.png";
 
 interface Heart {
   id: number;
@@ -30,24 +27,19 @@ const FloatingHearts = () => {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {hearts.map((heart) => (
-        <div
+        <img
           key={heart.id}
-<<<<<<< HEAD
-          className="absolute animate-float opacity-60"
-=======
-          src={heartSimple}
+          src={ollie1}
           alt=""
           className="absolute animate-float text-valentine-heart opacity-60"
->>>>>>> parent of 8f9d673 (try use png)
           style={{
             left: `${heart.left}%`,
             animationDelay: `${heart.delay}s`,
             animationDuration: `${heart.duration}s`,
-            fontSize: `${heart.size}px`,
+            width: `${heart.size}px`,
+            height: `${heart.size}px`,
           }}
-        >
-          ❤️
-        </div>
+        />
       ))}
     </div>
   );
